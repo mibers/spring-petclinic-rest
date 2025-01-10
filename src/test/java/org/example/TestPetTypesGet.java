@@ -18,7 +18,7 @@ public class TestPetTypesGet {
     }
 
     @Test
-    @DisplayName("GET ALL EXISTING PETTYPES")
+    @DisplayName("Get all existing pettypes")
     @Description("Get all existing pettypes")
     @Issue("Link to Xray here...")
     @Epic("REST API petclinic")
