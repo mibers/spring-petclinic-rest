@@ -1,7 +1,9 @@
 package org.example;
 
+import io.qameta.allure.*;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Disabled;
 
@@ -16,6 +18,14 @@ public class TestPetTypesGet {
     }
 
     @Test
+    @DisplayName("GET ALL EXISTING PETTYPES")
+    @Description("Get all existing pettypes")
+    @Issue("Link to Xray here...")
+    @Epic("REST API petclinic")
+    @Feature("Endpoint pettypes")
+    @Story("GET pettypes")
+    @Owner("martin.ibersperger@gmx.at")
+    @Link(name = "OpenAPI Documentation", url = "http://localhost:9966/petclinic/swagger-ui/index.html#/pettypes/getPetType")
     void getAllPetTypes() {
         given()
             .accept(ContentType.JSON)
