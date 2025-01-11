@@ -1,4 +1,4 @@
-package org.example;
+package org.martinsoft.petclinic.pettypes;
 
 import io.qameta.allure.*;
 import io.restassured.RestAssured;
@@ -11,6 +11,11 @@ import org.junit.jupiter.api.Disabled;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
+@Epic("Epic: REST API petclinic")
+@Feature("Feature: Endpoint pettypes")
+@Story("Story: GET pettypes")
+@Owner("martin.ibersperger@gmx.at")
+@Link(name = "OpenAPI Documentation", url = "http://localhost:9966/petclinic/swagger-ui/index.html#/pettypes/getPetType")
 public class TestPetTypesGet {
 
     static {
@@ -21,11 +26,6 @@ public class TestPetTypesGet {
     @DisplayName("Get all existing pettypes")
     @Description("Get all existing pettypes")
     @Issue("Link to Xray here...")
-    @Epic("REST API petclinic")
-    @Feature("Endpoint pettypes")
-    @Story("GET pettypes")
-    @Owner("martin.ibersperger@gmx.at")
-    @Link(name = "OpenAPI Documentation", url = "http://localhost:9966/petclinic/swagger-ui/index.html#/pettypes/getPetType")
     void getAllPetTypes() {
         given()
             .accept(ContentType.JSON)
@@ -41,8 +41,10 @@ public class TestPetTypesGet {
             .log().all()
         ;
     }
-
     @Test
+    @DisplayName("Get existing pettype by Id")
+    @Description("Get existing pettype by Id")
+    @Issue("Link to Xray here...")
     void getPetTypeById() {
         given()
             .accept(ContentType.JSON)
@@ -60,6 +62,9 @@ public class TestPetTypesGet {
     }
 
     @Test
+    @DisplayName("Try to get pettype by Id which doesn't exist")
+    @Description("Try to get pettype by Id which doesn't exist")
+    @Issue("Link to Xray here...")
     void getPetTypeByIdDoesNotExist() {
         given()
             .accept(ContentType.JSON)
@@ -72,7 +77,10 @@ public class TestPetTypesGet {
     }
 
     @Test
-    @Disabled("Cannot get ETag header from API")
+    @Disabled("Cannot get ETag header from API => RC always 200")
+    @DisplayName("Get existing pettype by Id - check for RC 304")
+    @Description("Get existing pettype by Id - check for RC 304")
+    @Issue("Link to Xray here...")
     void getPetTypeByIdUnmodified() {
         String etag = given()
             .accept("text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7")
@@ -100,6 +108,9 @@ public class TestPetTypesGet {
     }
 
     @Test
+    @DisplayName("Try to get pettype by Id - Id is string not integer")
+    @Description("Try to get pettype by Id - Id is string not integer")
+    @Issue("Link to Xray here...")
     void getPetTypeByIdInvalidDataType() {
         given()
             .accept(ContentType.JSON)
@@ -114,6 +125,9 @@ public class TestPetTypesGet {
     }
 
     @Test
+    @DisplayName("Try to get pettype by Id - Id out of possible range")
+    @Description("Try to get pettype by Id - Id out of possible range")
+    @Issue("Link to Xray here...")
     void getPetTypeByIdOutOfRange() {
         given()
             .accept(ContentType.JSON)
@@ -128,6 +142,9 @@ public class TestPetTypesGet {
     }
 
     @Test
+    @DisplayName("Try to get pettype by Id - extra path after endpoint")
+    @Description("Try to get pettype by Id - extra path after endpoint")
+    @Issue("Link to Xray here...")
     void getPetTypeByIdEndpointTooLong() {
         given()
             .accept(ContentType.JSON)

@@ -1,4 +1,4 @@
-package org.example;
+package org.martinsoft.petclinic.pettypes;
 
 import io.qameta.allure.*;
 import io.restassured.RestAssured;
@@ -10,9 +10,9 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
 
-@Story("DELETE pettypes")
-@Epic("REST API petclinic")
-@Feature("Endpoint pettypes")
+@Epic("Epic: REST API petclinic")
+@Feature("Feature: Endpoint pettypes")
+@Story("Story: DELETE pettypes")
 @Owner("martin.ibersperger@gmx.at")
 @Link(name = "OpenAPI Documentation", url = "http://localhost:9966/petclinic/swagger-ui/index.html#/pettypes/deletePetType")
 public class TestPetTypeDelete {
