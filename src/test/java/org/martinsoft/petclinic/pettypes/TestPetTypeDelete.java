@@ -26,7 +26,7 @@ public class TestPetTypeDelete {
     @Description("Delete existing pettype by Id")
     @Issue("Link to Xray here...")
     void deletePetTypeById() {
-        int petTypeId = 1; // Make sure this petTypeId exists => reset DB to initial state before!
+        int petTypeId = 5; // Make sure this petTypeId exists => reset DB to initial state before!
 
         given()
             .accept(ContentType.JSON)
