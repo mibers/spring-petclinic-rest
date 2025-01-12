@@ -212,6 +212,14 @@ hosted in a special GitHub org: [spring-petclinic](https://github.com/spring-pet
 If you have a special interest in a different technology stack
 that could be used to implement the Pet Clinic then please join the community there.
 
+## Running Rest API tests
+
+Be sure JAVA and Maven is available in your environment.
+
+Run `mvn clean test -Dtest=Test* -DexcludedTests=*Tests` from project root folder to execute the Rest API tests via [REST Assured](https://rest-assured.io/).
+
+To view Allure web report run `mvn allure serv`.
+
 
 # Contributing
 
